@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+}
+
+/* Custom styles for the game */
+canvas {
+  touch-action: none;
+}
+
+/* Improve button focus styling */
+button:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Custom scrollbar for chat */
+.overflow-y-auto::-webkit-scrollbar {
+  width: 6px;
+}
+
+.overflow-y-auto::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.overflow-y-auto::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+.overflow-y-auto::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Additional custom styles */
+@layer components {
+  /* Game header styles */
+  .game-header {
+    @apply bg-blue-600 text-white p-4 shadow-md;
+  }
+  
+  /* Game container styles */
+  .game-container {
+    @apply flex flex-col md:flex-row flex-1 overflow-hidden;
+  }
+  
+  /* Player list styles */
+  .player-list {
+    @apply w-full md:w-64 bg-gray-100 dark:bg-gray-800 p-4 overflow-y-auto shadow-inner;
+  }
+  
+  /* Player item styles */
+  .player-item {
+    @apply p-3 rounded-lg mb-2 transition-colors duration-200;
+  }
+  
+  .player-item-active {
+    @apply bg-blue-100 dark:bg-blue-900 border-l-4 border-blue-500;
+  }
+  
+  .player-item-inactive {
+    @apply bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600;
+  }
+  
+  /* Chat styles */
+  .chat-container {
+    @apply w-full md:w-80 bg-gray-100 dark:bg-gray-800 flex flex-col overflow-hidden shadow-inner;
+  }
+  
+  .chat-header {
+    @apply bg-blue-600 text-white p-2 font-bold;
+  }
+  
+  .chat-messages {
+    @apply flex-1 p-3 overflow-y-auto bg-white dark:bg-gray-700;
+  }
+  
+  .chat-input {
+    @apply p-2 bg-gray-200 dark:bg-gray-800 flex border-t border-gray-300 dark:border-gray-600;
+  }
+  
+  /* Canvas styles */
+  .canvas-container {
+    @apply flex-1 flex justify-center items-center bg-white p-4;
+  }
+  
+  .drawing-tools {
+    @apply w-full bg-gray-200 dark:bg-gray-700 p-2 mb-2 rounded-lg flex flex-wrap justify-center gap-2 shadow-sm;
+  }
+  
+  /* Word selection styles */
+  .word-option {
+    @apply w-full py-3 px-4 bg-blue-100 hover:bg-blue-200 dark:bg-blue-900 dark:hover:bg-blue-800 text-blue-800 dark:text-blue-100 font-bold rounded-lg transition duration-200 text-lg;
+  }
+} 
