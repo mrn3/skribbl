@@ -1,0 +1,45 @@
+.game-container {
+  display: flex;
+  flex-direction: column;
+  height: 95vh;
+}
+
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.game-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.round-info, .time-info, .word-info {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.word-info {
+  color: #4CAF50;
+}
+
+.game-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.canvas-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+} 
